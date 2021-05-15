@@ -26,9 +26,12 @@ RestartSec=5
 WantedBy=multi-user.target
 
 
-sudo systemctl daemon-reload	<== notifies systemd of the new service file
-sudo systemctl enable javaservice.service		<== enable it so it runs on boot
+sudo systemctl daemon-reload    	<== notifies systemd of the new service file
+
+sudo systemctl enable javaservice.service		   <== enable it so it runs on boot
+
 // javaservice.service will be added to the dir /etc/systemd/system/multi-user.target.wants. This dir indicates what services to start on boot
 
 sudo systemctl start javaservice
+
 sudo systemctl status javaservice   <== check that the service is running fine
